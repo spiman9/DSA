@@ -4,9 +4,11 @@ This repository contains solutions to various Data Structures and Algorithms pro
 
 ## 📁 Folder Structure
 
-- **Recursion/** – Contains problems solved using recursive approaches.  
-- **Linked List/** – Covers operations and problems related to singly and doubly linked lists. 
-- **Dynamic Programming/**  - Covers operations and problems related to Dynamic programming
+- **Recursion/** 
+- **Linked List 1/**
+- **Linked List 2/**
+- **Dynamic Programming 1/** 
+- **Dynamic Programming 2/** 
 
 ## 💡 Purpose
 
