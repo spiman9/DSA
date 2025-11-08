@@ -9,6 +9,7 @@ This repository contains solutions to various Data Structures and Algorithms pro
 - **Linked List 2/**
 - **Dynamic Programming 1/** 
 - **Dynamic Programming 2/** 
+- **Linked List and Arrays/**
 
 ## 💡 Purpose
 
@@ -19,6 +20,7 @@ The goal of this repository is to improve problem-solving skills and maintain we
 - Recursion
 - Linked List
 - Dynamic Programming
+- Arrays
 
 ## ⚙️ Language
 
