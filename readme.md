@@ -10,6 +10,7 @@ This repository contains solutions to various Data Structures and Algorithms pro
 - **Dynamic Programming 1/** 
 - **Dynamic Programming 2/** 
 - **Linked List and Arrays/**
+- **Greedy Algorithms/**
 
 ## 💡 Purpose
 
@@ -20,7 +21,8 @@ The goal of this repository is to improve problem-solving skills and maintain we
 - Recursion
 - Linked List
 - Dynamic Programming
-- Arrays
+- Linked List and Arrays
+- Greedy Algorithms
 
 ## ⚙️ Language
 
