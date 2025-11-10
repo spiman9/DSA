@@ -12,7 +12,7 @@ class Solution {
         for(int i=0;i<start.size();i++){
             vec.push_back({end[i] , start[i]});
         }
-        sort(vec.begin() , vec.end());
+        sort(vec.begin() , vec.end()); // sort it based on the end timings
         //printt(vec);
         int ct = 1;
         int endTime = vec[0].first;
