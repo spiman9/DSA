@@ -1,37 +1,39 @@
 class Solution {
   public:
-  // need to Apply DSU to optimize this one
-    vector<int> jobSequencing(vector<int> &deadline, vector<int> &profit){
+    vector<int> jobSequencing(vector<int> &deadline, vector<int> &profit) {
+        // code here
+        vector<pair<int , int>>v;
         
-        vector<pair<int , int>>vec;
-        int maxDays = 0;
-        for(int  i= 0 ;i<profit.size();i++){
-            maxDays = max(maxDays , deadline[i]);
-            vec.push_back({profit[i] , deadline[i]});
+        for(int i = 0 ; i < profit.size(); ++i){
+            v.push_back({deadline[i] , profit[i]});
         }
-        sort(vec.begin() , vec.end() , greater<>());//Sort - based on the profit - because at the end of the day it is about maximize the profit
         
-        vector<bool>taken(maxDays+1 , false); // now to mark if it is visited
+        sort(v.begin() , v.end()); // sort based on deadline
         
-        int ans = 0;
-        int ct = 0;
-        for(auto pr : vec){
-            bool t = false;
-            
-            int i = pr.second; // day value
-            while(i > 0 && taken[i] == true){ // to check that day or less day we can do that job
-                i--;
-            }
-            
-            if(i != 0){
-                taken[i] = true;
-                ans += pr.first;
-                ct++;
+        
+        auto cmp = [](int a , int b){ return a < b;};
+        
+        priority_queue<int , vector<int> , greater<int> >pq;
+        
+        for(int i = 0 ; i < v.size() ; i++){
+            if(v[i].first > pq.size()){ // this job can be scheduled as its deadline is in future so
+            //objvisiosly can be scheduled now
+                pq.push(v[i].second);
+            }else if(!pq.empty() && pq.top() < v[i].second){
+                //job deadline is today or in past we have already consumed the day
+                //now we need to remove the lowest profit job and add this one
+                pq.pop();
+                pq.push(v[i].second);
             }
         }
         
-        return {ct , ans};
+        vector<int>ans = {0,0};
         
+        while(!pq.empty()){
+            ans[0]++;
+            ans[1] += pq.top(); pq.pop();
+        }
+        
+        return ans;
     }
-    
-};
+};`
